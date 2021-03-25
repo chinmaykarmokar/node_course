@@ -14,6 +14,8 @@ const partialsPath = path.join(__dirname,'../templates/partials');
 app.set('view engine','hbs');
 app.set('views',viewsPath);
 hbs.registerPartials(partialsPath);
+
+//Static directory
 app.use(express.static(publicDirectoryPath));
 
 app.get('', (req,res) => {
@@ -32,8 +34,9 @@ app.get('/about', (req,res) => {
 
 app.get('/help', (req,res) => {
 	res.render('help', {
-		title: 'Help Page',
-		note: 'See here for help'
+		title: 'Help',
+		note: 'See here for help',
+		name: 'Chinmay M. K.'
 	});
 })
 
@@ -41,6 +44,20 @@ app.get('/weather', (req,res) => {
 	res.send({
 		forecast: "30 degrees",
 		location: "Mumbai"
+	});
+});
+
+app.get('/help/*', (req,res) => {
+	res.render('404', {
+		title: "404",
+		error_msg: "Help article not found."
+	});
+})
+
+app.get('*', (req,res) => {
+	res.render('404', {
+		title: "404",
+		error_msg: "Page not found."
 	});
 });
 

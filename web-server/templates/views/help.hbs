@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Help</title>
 
 	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>
 <body>
-	<h1>{{title}}</h1>
-	<p>{{note}}</p>
+	<div class="main-content">
+		{{>headers}}
+
+		<p>{{note}}</p>	
+	</div>
+	
+	{{>footer}}
 </body>
 </html>

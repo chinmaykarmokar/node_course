@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Weather</title>
+	<title>Error</title>
 
 	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 	<script type="text/javascript" src="./js/app.js"></script>
@@ -9,10 +9,11 @@
 <body>
 	<div class="main-content">
 		{{>headers}}
-
-		<p>Use this site to get weather.</p>
+		<h3>{{error_msg}}</h3>
 	</div>
-	
-	{{>footer}}
+
+	{{>footer}}	
 </body>
 </html>
+
+
